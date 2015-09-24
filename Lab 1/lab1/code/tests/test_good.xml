@@ -1,0 +1,28 @@
+<phonebook>
+	<people>
+		<person fname="Hakan" lname="Akkan" status="student">
+			<address ref="addr1"/>
+			<phone>575-123-4567</phone>
+		</person>
+		<person fname="Lorie" lname="Liebrock" status="professor">
+			<address ref="addr1"/>
+		</person>
+		<person fname="James" lname="Hetfield" status="god">
+			<address>
+				<street>Master of Puppets Ave.
+				         P.O. BOX 1</street>
+				<zipcode>66666</zipcode>
+				<city>San Francisco</city>
+				<state>CA</state>
+			</address>
+		</person>
+	</people>
+	<addresses>
+		<address id="addr1">
+			<street>801 Leroy Place, Cramer Hall</street>
+			<zipcode>87801</zipcode>
+			<city>Socorro</city>
+			<state>NM</state>
+		</address>
+	</addresses>
+</phonebook>

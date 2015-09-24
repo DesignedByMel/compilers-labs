@@ -1,0 +1,16 @@
+<phonebook>
+	<people>
+		<person>
+			<address ref="addr1"/>
+			<phone>575-123-4567</phone>
+		</person>
+	</people>
+	<addresses>
+		<address id="addr1">
+			<street>801 Leroy Place, Cramer Hall</street>
+			<zipcode>87801<zipcode/>
+			<city>Socorro</city>
+			<state>NM</state>
+		</address>
+	</addresses>
+</phonebook>

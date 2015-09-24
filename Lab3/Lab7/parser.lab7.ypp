@@ -1,0 +1,78 @@
+%{
+  #include <stdio.h>
+  #include <vector>
+  #include <cstring>
+  #include <math.h>
+  #include <iostream>
+
+  std::vector< std::pair< std::string, double (*)(double) > > FunctionTable;
+  extern char yytext[];
+  #define YYERROR_VERBOSE 1
+  int yylex();
+  extern int yylineno;
+  int yycol = 0;
+
+  void yyerror(char *s)
+  {
+    fflush(stdout);
+    printf("Error: line %d column %d: %s\n",yylineno,yycol,s);
+  }
+  std::vector< std::pair< char *, double > > Variables;
+  double GetValue(char *name)
+  {
+    std::vector< std::pair< char *, double > >::iterator i;
+    for(i = Variables.begin(); i != Variables.end(); i++)
+    {
+      if (!strcmp(i->first, name))
+      {
+        return(i->second);
+      }
+    }
+    std::cerr << "Error: " << name << " does not exist" << std::endl;
+    return(0.0);
+  }
+  void SetValue(char *name, double value)
+  {
+    std::vector< std::pair< char *, double > >::iterator i;
+    for(i = Variables.begin(); i != Variables.end(); i++)
+    {
+      if (!strcmp(i->first, name))
+      {
+        i->second = value;
+      }
+    }
+    std::pair< char *, double > P(name,value);
+    Variables.push_back(P);
+  }
+
+  double ExecFunc(char *name, double argument)
+  {
+    std::vector< std::pair< std::string, double (*)(double) > >::iterator i;
+    for(i = FunctionTable.begin(); i != FunctionTable.end(); i++)
+    {
+      if (i->first == name)
+      {
+        return((*(i->second))(argument));
+      }
+    }
+    std::cerr << "Error: Function " << name << " does not exist" << std::endl;
+    return(0.0);
+  }
+%}
+
+%union {
+  double Value;
+  char *Name;
+}
+
+%token <Name> IDENTIFIER
+%token <Name> FUNCTION
+%token <Value> CONSTANT
+
+%%
+
+root : IDENTIFIER { std::cout << $1 << std::endl; }
+     | CONSTANT { std::cout << $1 << std::endl; }
+     ;
+
+%%
