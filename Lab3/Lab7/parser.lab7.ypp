@@ -69,10 +69,17 @@
 %token <Name> FUNCTION
 %token <Value> CONSTANT
 
+%type <Value> exp
+
+%left '+' '-'
+%left '*' '/'
+%right '^'
+
 %%
 
 root : IDENTIFIER { std::cout << $1 << std::endl; }
      | CONSTANT { std::cout << $1 << std::endl; }
+     | IDENTIFIER IDENTIFIER IDENTIFIER { }
      ;
 
 %%
