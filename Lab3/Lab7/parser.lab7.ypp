@@ -69,7 +69,10 @@
 %token <Name> FUNCTION
 %token <Value> CONSTANT
 
-%type <Value> exp
+%type <Value> expr
+%type <Value> command
+%type <Value> assign
+%type <Value> function
 
 %left '+' '-'
 %left '*' '/'
@@ -77,9 +80,32 @@
 
 %%
 
-root : IDENTIFIER { std::cout << $1 << std::endl; }
-     | CONSTANT { std::cout << $1 << std::endl; }
-     | IDENTIFIER IDENTIFIER IDENTIFIER { }
+root : command '\n'                     { }
+      | root command '\n'               { }
      ;
+
+command : expr                          { std::cout << "= " << $1 << std::endl;}
+      | assign                          { std::cout << "= " << $1 << std::endl;}
+      ;
+
+expr : expr '+' expr                    { $$ = $1 + $3; }
+     | expr '-' expr                    { $$ = $1 - $3; }
+     | expr '*' expr                    { $$ = $1 * $3; }
+     | expr '/' expr                    { $$ = $1 / $3; }
+     | expr '^' expr                    { $$ = pow($1, $3); }
+     | '(' expr ')'                     { $$ = $2; }
+     | function                         { $$ = $1; }
+     | CONSTANT                         { $$ = $1; }
+     | IDENTIFIER                       { $$ = GetValue($1); }
+     ;
+
+function : FUNCTION expr                { $$ = ExecFunc($1, $2);}
+        | FUNCTION assign               { $$ = ExecFunc($1, $2);}
+        ;
+
+assign : IDENTIFIER '=' expr            { SetValue($1, $3);
+                                          $$ = $3;
+                                        }
+      ;
 
 %%
