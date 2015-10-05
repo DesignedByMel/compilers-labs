@@ -1,3 +1,4 @@
+
 %{
   #include <stdio.h>
   #include <vector>
@@ -68,7 +69,6 @@
 %token <Name> IDENTIFIER
 %token <Name> FUNCTION
 %token <Value> CONSTANT
-%token <Value> CALC
 
 %type <Value> expr
 %type <Value> command
@@ -85,7 +85,7 @@ root : command '\n'                     { }
       | root command '\n'               { }
      ;
 
-command : CALC expr                          { std::cout << "= " << $2 << std::endl;}
+command : expr                          { std::cout << "= " << $1 << std::endl;}
       | assign                          { std::cout << "= " << $1 << std::endl;}
       ;
 
