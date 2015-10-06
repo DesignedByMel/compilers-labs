@@ -1,0 +1,68 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/ast.cpp
+visitor.h
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/visitor.h
+ast.h
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/ast.h
+
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/ast.h
+vector
+-
+string
+-
+visitor.h
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/visitor.h
+
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/driver.cpp
+iostream
+-
+string
+-
+stdio.h
+-
+stdlib.h
+-
+getopt.h
+-
+ast.h
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/ast.h
+visitor.h
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/visitor.h
+
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/evaluate.cpp
+iostream
+-
+visitor.h
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/visitor.h
+ast.h
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/ast.h
+
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/prettyPrint.cpp
+iostream
+-
+visitor.h
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/visitor.h
+ast.h
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/ast.h
+
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/printExpressions.cpp
+iostream
+-
+visitor.h
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/visitor.h
+ast.h
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/ast.h
+
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/visitor.cpp
+ast.h
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/ast.h
+
+/Users/melaniepalmer/Documents/College/Senior Year/Cake Whispers/compilers-labs/lab4/visitor.h
+
