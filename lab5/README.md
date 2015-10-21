@@ -90,3 +90,15 @@ Negative:   n*2 + 100 = 104
 I got that answer! The source code is problem 5.ll, the original code is in problem4.ll.
 
 # Problem 6
+>> make all
+>> ./problem6
+
+This has a forloop print in the main that goes from 0 - 20
+
+# Problem 7
+>> make all (if you haven't yet)
+>> ./problem 7
+
+This has a couple of tests. It has no bugs, and I added a feature to return a -1 if they give an invalid selector. Towards the end I was realizing that I can name variables... I had understood that before, but I had tried it. After getting very confused on the loop for a bit, I named everything. That got rid of a lot of the confusion.
+
+LLVM is very intereting! 
